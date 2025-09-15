@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name:  nginx
 spec:
-  type: {{ .values.service.type }}
+  type: {{ .Values.service.type }}
   selector: 
     tier: frontend
     app: nginx
   ports: 
     - name: nginx-service-port
       protocol: TCP
-      port: {{ .values.service.port }}
+      port: {{ .Values.service.port }}
       targetPort: 80

@@ -8,7 +8,7 @@ metadata:
     tier: web-tier
     project: expense
 spec:
-  replicas: {{ .values.deployment.replicas }}
+  replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels: 
       app: frontend
@@ -23,7 +23,7 @@ spec:
     spec: 
       containers:
       - name: frontend
-        image: vamsidocker012/frontend:{{ .values.deployment.imageVersion }}
+        image: vamsidocker012/frontend:{{ .Values.deployment.imageVersion }}
         resources:  
           requests:
             cpu: 100m
